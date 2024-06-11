@@ -12,7 +12,7 @@ builder.Services.AddControllersWithViews();
 var dynamoDbConfig = builder.Configuration.GetSection("DynamoDbLocal").Get<DynamoDbConfig>();
 var clientConfig = new AmazonDynamoDBConfig
 {
-    ServiceURL = dynamoDbConfig!.ServiceURL
+   // ServiceURL = dynamoDbConfig!.ServiceURL
 };
 
 builder.Services.AddSingleton<IAmazonDynamoDB>(sp => new AmazonDynamoDBClient(clientConfig));
